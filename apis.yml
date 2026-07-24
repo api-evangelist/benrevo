@@ -1,4 +1,16 @@
 aid: benrevo
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/benrevo.png
 name: BenRevo
 description: BenRevo is a company surfaced as a portfolio company of 500-global and added to the API Evangelist
   network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
@@ -11,7 +23,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+x-enrichment-status: no-live-surface
+x-enrichment-note: 'Enrichment pass 2026-07-18 found no reachable web/API/developer
+  surface. benrevo.com apex and www do not resolve (no A record); api.benrevo.com
+  is Cloudflare-fronted but its origin is dead (HTTP 530 / Cloudflare error 1016).
+  The domain still carries live email infrastructure (Google Workspace MX + Amazon
+  SES + Paubox HIPAA email) and an SPF record, so it is owned but the product/API
+  presence appears defunct or unlaunched. Only real artifact captured: probed
+  DomainSecurity (DNS/email facts). No fabrication.'
 tags:
 - Company
 apis: []
@@ -21,5 +41,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/benrevo-domain-security.yml
 - type: Website
   url: https://benrevo.com
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
